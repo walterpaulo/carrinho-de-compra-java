@@ -29,7 +29,7 @@ public class CarrinhoTest {
 				.pegarProduto(
 						new Product(99L, "Call Of Duty WWII", new BigDecimal("249.99"), Short.parseShort("205"), "/"),2)
 				.pegarProduto(
-						new Product(12L, "Mortal Kombal XL", new BigDecimal("69.99"), Short.parseShort("150"), "/"), 1)
+						new Product(12L, "Mortal Kombal XL", new BigDecimal("69.99"), Short.parseShort("150"), "/"), 2)
 				.constroi();
 		setCompra(carrinho);
 
@@ -47,5 +47,14 @@ public class CarrinhoTest {
 		Assert.assertEquals(1, getCompra().quantidadeProdutos());
 		
 	}
+	@SuppressWarnings("deprecation")
+	@Test
+	public void valorTotalDaCompra_test() {
+		Assert.assertEquals(new BigDecimal("639.96"), getCompra().valorTotalDaCompra());
+		
+	}
+	
+
+
 
 }

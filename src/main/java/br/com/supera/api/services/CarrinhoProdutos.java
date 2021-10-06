@@ -28,4 +28,11 @@ public class CarrinhoProdutos {
 		this.qtde = qtde;
 	}
 
+	@Override
+	public String toString() {
+		return "CarrinhoProdutos \n[produto=" + produto + ", qtde=" + qtde + "]\n";
+	}
+	
+	
+
 }

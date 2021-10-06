@@ -1,6 +1,5 @@
 package br.com.supera.api.services;
 
-
 import br.com.supera.api.models.Product;
 
 public class CriadorDeCarrinho {
