@@ -1,6 +1,7 @@
 package br.com.supera.api.models;
 
 import java.util.List;
+import java.util.stream.Collector;
 
 import com.github.dbunit.rules.DBUnitRule;
 import com.github.dbunit.rules.api.configuration.DBUnit;
@@ -43,4 +44,6 @@ public class ProductDaoExampleTest {
 		}
         
     }
+	
+	
 }

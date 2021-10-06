@@ -9,16 +9,27 @@ import javax.persistence.Id;
 @Entity
 public class Product {
 
-   @Id
-   @GeneratedValue
-   public long id;
+	@Id
+	@GeneratedValue
+	private long id;
+	private String name;
+	private BigDecimal price;
+	private short score;
+	private String image;
 
-   public String name;
+	public Product() {
+		super();
+	}
+	
 
-   public BigDecimal price;
 
-   public short score;
-
-   public String image;
+	public Product(long id, String name, BigDecimal price, short score, String image) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.score = score;
+		this.image = image;
+	}
 
 }
