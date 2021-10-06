@@ -1,4 +1,4 @@
-package br.com.supera.api;
+package br.com.supera.api.models;
 
 import java.math.BigDecimal;
 

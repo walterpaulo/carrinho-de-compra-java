@@ -1,3 +1,4 @@
+package br.com.supera.api.models;
 
 import java.util.List;
 
@@ -6,7 +7,6 @@ import com.github.dbunit.rules.api.configuration.DBUnit;
 import com.github.dbunit.rules.api.dataset.DataSet;
 import com.github.dbunit.rules.util.EntityManagerProvider;
 
-import br.com.supera.api.Product;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -17,6 +17,7 @@ import static com.github.dbunit.rules.util.EntityManagerProvider.em;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
+
 @RunWith(JUnit4.class)
 public class ProductDaoExampleTest {
 
