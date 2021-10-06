@@ -31,10 +31,12 @@ public class CarrinhoTest {
 				.pegarProduto(
 						new Product(12L, "Mortal Kombal XL", new BigDecimal("69.99"), Short.parseShort("150"), "/"), 1)
 				.constroi();
+		setCompra(carrinho);
 
 	}
+	@SuppressWarnings("deprecation")
 	@Test
-	public void quantidadedeProduto() {
+	public void quantidadedeProduto_test() {
 		Assert.assertEquals(2, getCompra().quantidadeProdutos());
 		
 	}

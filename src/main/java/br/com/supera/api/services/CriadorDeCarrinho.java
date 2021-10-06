@@ -1,9 +1,14 @@
 package br.com.supera.api.services;
 
+
 import br.com.supera.api.models.Product;
 
 public class CriadorDeCarrinho {
-	private CarrinhoDeCompra carrinho;
+	private CarrinhoDeCompra carrinho = new CarrinhoDeCompra();
+
+	public CriadorDeCarrinho() {
+		super();
+	}
 
 	public CarrinhoDeCompra getCarrinho() {
 		return carrinho;
