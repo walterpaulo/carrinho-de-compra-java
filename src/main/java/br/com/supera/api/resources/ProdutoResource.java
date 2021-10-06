@@ -22,7 +22,11 @@ public class ProdutoResource {
 		
 		
 		System.out.println(carrinho.quantidadeProdutos());
+		carrinho.removerProdutoPorId(99L);
+		System.out.print(carrinho.quantidadeProdutos());
 		System.out.println("ok");
 	}
+	
+	
 
 }

@@ -40,5 +40,12 @@ public class CarrinhoTest {
 		Assert.assertEquals(2, getCompra().quantidadeProdutos());
 		
 	}
+	@SuppressWarnings("deprecation")
+	@Test
+	public void removerProduto_test() {
+		getCompra().removerProdutoPorId(99L);
+		Assert.assertEquals(1, getCompra().quantidadeProdutos());
+		
+	}
 
 }

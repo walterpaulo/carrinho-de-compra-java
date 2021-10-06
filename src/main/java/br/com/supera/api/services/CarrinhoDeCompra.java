@@ -25,6 +25,12 @@ public class CarrinhoDeCompra {
 		getListaProdutos().add(new CarrinhoProdutos(produto, qtde));
 	}
 
+	public void removerProdutoPorId(long id) {
+		CarrinhoProdutos obj = getListaProdutos().stream().filter(u -> u.getProduto().getId() == id).findFirst().get();
+		getListaProdutos().remove(obj);
+	}
+	
+
 	public int quantidadeProdutos() {
 		return getListaProdutos().size();
 	}
