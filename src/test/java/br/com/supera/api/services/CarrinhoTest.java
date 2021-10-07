@@ -49,10 +49,19 @@ public class CarrinhoTest {
 	}
 	@SuppressWarnings("deprecation")
 	@Test
-	public void valorTotalDaCompra_test() {
-		Assert.assertEquals(new BigDecimal("639.96"), getCompra().valorTotalDaCompra());
+	public void valorTotalDaCompra_test_SemFrente() {
+		Assert.assertEquals(new BigDecimal("639.96"), getCompra().valorTotalDaCompra().add(getCompra().calcularFrete()));
 		
 	}
+	@SuppressWarnings("deprecation")
+	@Test
+	public void valorTotalDaCompra_test_CemFrente() {
+		getCompra().removerProdutoPorId(99L);
+		Assert.assertEquals(new BigDecimal("149.98"), getCompra().valorTotalDaCompra().add(getCompra().calcularFrete()));
+		
+	}
+	
+
 	
 
 
