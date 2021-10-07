@@ -1,17 +1,15 @@
 package br.com.supera.api.services;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import br.com.supera.api.models.Product;
 
+
 public class ProdutoService {
 	private List<Product> produto = new ArrayList<Product>();
 	
-
 	public ProdutoService() {
 		super();
 		this.produto = new ArrayList<Product>();
@@ -25,15 +23,17 @@ public class ProdutoService {
 		this.produto = produto;
 	}
 	
-	public void adicionar(Product produto) {
+	public Product adicionar(Product produto) {
 		getProduto().add(produto);
+		return produto;
 	}
 	public void excluir(Product produto) {
 		getProduto().remove(produto);
 	}
-	public void excluirPorId(long id) {
+	public Product excluirPorId(long id) {
 		Product obj = getProduto().stream().filter(p -> p.getId() == id).findFirst().get();
 		getProduto().remove(obj);
+		return obj;
 	}
 	
 	public List<Product> listar(){

@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import br.com.supera.api.models.Product;
 
 @Repository
-public interface ProdutoController extends JpaRepository<Product, Long>{
+public interface ProdutoRepository extends JpaRepository<Product, Long>{
 
 }
