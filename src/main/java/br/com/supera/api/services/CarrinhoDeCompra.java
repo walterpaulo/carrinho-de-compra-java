@@ -2,6 +2,8 @@ package br.com.supera.api.services;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import br.com.supera.api.models.Product;
@@ -47,6 +49,7 @@ public class CarrinhoDeCompra {
 		FreteProduto frete = new FreteProduto();
 		return frete.calcularFrete(valorTotalDaCompra(), valorFrete());
 	}
+
 	private BigDecimal valorFrete() {
 		BigDecimal valorFrete = new BigDecimal(10).multiply(new BigDecimal(quantidadeProdutos()));
 		return valorFrete;

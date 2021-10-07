@@ -6,7 +6,7 @@ import br.com.supera.api.services.CarrinhoDeCompra;
 import br.com.supera.api.services.CriadorDeCarrinho;
 
 import br.com.supera.api.models.*;
-public class ProdutoResource {
+public class CarrinhoResource {
 
 	public static void main(String[] args) {
 		System.out.println("===========Produto=================");

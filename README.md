@@ -32,5 +32,18 @@
 
   - A API Restful
   
+## TDD
+__CarrinhoTest__ (camada de serviços)
+  -  Quantidadede de produtos no carrinho;
+  -	 Remover Produto do carrinho;
+  -	 Valor de compra abaixo de R$ 250,00 e cobrado tarifa de frete;
+  -	 Valor de compra acima de R$ 250,00 e zerada tarifa de frete;
+
+__ProdutoTest__ (camada de serviços)
+
+  -  Quantidadede de produtos(adição, exclusão e quantidade);
+ 
+	
+  
 ## Finalazado
  executar/compilar/empacotar 
