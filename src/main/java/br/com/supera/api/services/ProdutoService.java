@@ -1,7 +1,9 @@
 package br.com.supera.api.services;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import br.com.supera.api.models.Product;
@@ -47,6 +49,18 @@ public class ProdutoService {
 				.stream().sorted((p1,p2) -> p1.getName().compareTo(p2.getName()))
 				.collect(Collectors.toList());
 		 return listaNome;
+	}
+	
+	public List<Product> listaPorPreco(){
+		List<Product> listaNome = getProduto()
+				.stream().sorted((p1,p2) -> p1.getPrice().compareTo(p2.getPrice()))
+				.collect(Collectors.toList());
+		 return listaNome;
+	}
+	
+	public List<Product> listaPorScore(){
+		
+		return getProduto();
 	}
 	
 	
