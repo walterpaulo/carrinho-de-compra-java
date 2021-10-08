@@ -19,7 +19,6 @@ public class ProdutoResource {
 	@GetMapping("")
 	public ResponseEntity<List<Product>> listaProduto() {
 		return ResponseEntity.ok().build();
-		//return ResponseEntity.ok(controllers.listaTudo());
 	}
 
 }
