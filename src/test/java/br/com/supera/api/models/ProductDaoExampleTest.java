@@ -46,9 +46,12 @@ public class ProductDaoExampleTest {
 	public DBUnitRule dbUnitRule = DBUnitRule.instance(emProvider.connection());
 
 	@Before
+	@DBUnit(allowEmptyFields = true)
+	@DataSet("products.yml")
 	public void iniciarCenario() {
-
-		carrinho = criador.constroi();
+		Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
+				.setParameter("pid", 74L).getSingleResult();
+		carrinho = criador.pegarProduto(findPro1, 2).constroi();
 		setCompra(carrinho);
 
 	}
@@ -112,7 +115,7 @@ public class ProductDaoExampleTest {
 	public void quantidadeItemNoCarrinho_test() {
 		try {
 			assertNotNull(getCompra());
-			assertEquals(0, getCompra().quantidadeProdutos());
+			assertEquals(1, getCompra().quantidadeProdutos());
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -133,27 +136,40 @@ public class ProductDaoExampleTest {
 			       .constroi();
 			
 			assertNotNull(getCompra());
-			assertEquals(2, getCompra().quantidadeProdutos());
+			assertEquals(3, getCompra().quantidadeProdutos());
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
 
 	}
-//	@Test
-//	@DBUnit(allowEmptyFields = true)
-//	@DataSet("products.yml")
-//	public void removerProdutoCarrinho_test() {
-//		try {
-//			
-//			carrinho.removeProduto(99L);
-//			assertNotNull(getCompra());
-//			assertEquals(2, getCompra().quantidadeProdutos());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			fail(e.getMessage());
-//		}
-//
-//	}
+	@Test
+	@DBUnit(allowEmptyFields = true)
+	@DataSet("products.yml")
+	public void removerProdutoCarrinho_test() {
+		try {
+			criador.tiraProdutoPorId(74L).constroi();
+			assertNotNull(getCompra());
+			assertEquals(0, getCompra().quantidadeProdutos());
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+
+	}
+	
+	@Test
+	@DBUnit(allowEmptyFields = true)
+	@DataSet("products.yml")
+	public void valorTotalCompraFrente_test() {
+		try {
+			assertNotNull(getCompra());
+			assertEquals(BigDecimal.valueOf(143.88), getCompra().valorTotalDaCompra());
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+
+	}
 
 }

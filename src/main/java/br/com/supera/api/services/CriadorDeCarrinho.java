@@ -22,7 +22,7 @@ public class CriadorDeCarrinho {
 		return this;
 	}
 
-	public CriadorDeCarrinho tiraProduto(long id) {
+	public CriadorDeCarrinho tiraProdutoPorId(long id) {
 		getCarrinho().removerProdutoPorId(id);
 		return this;
 	}
