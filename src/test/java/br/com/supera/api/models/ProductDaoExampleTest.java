@@ -125,7 +125,7 @@ public class ProductDaoExampleTest {
 	@Test
 	@DBUnit(allowEmptyFields = true)
 	@DataSet("products.yml")
-	public void adicionarProdutoCarrinho_test() {
+	public void incluirProdutoCarrinho_test() {
 		try {
 			Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
 					.setParameter("pid", 12L).getSingleResult();
@@ -142,5 +142,21 @@ public class ProductDaoExampleTest {
 		}
 
 	}
+//	@Test
+//	@DBUnit(allowEmptyFields = true)
+//	@DataSet("products.yml")
+//	public void removerProdutoCarrinho_test() {
+//		try {
+//			
+//
+//			carrinho.incluirProduto(findPro1, 2);
+//			assertNotNull(getCompra());
+//			assertEquals(2, getCompra().quantidadeProdutos());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
+//
+//	}
 
 }
