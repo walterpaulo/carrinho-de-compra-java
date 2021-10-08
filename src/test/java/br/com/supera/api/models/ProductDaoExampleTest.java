@@ -164,12 +164,30 @@ public class ProductDaoExampleTest {
 	public void valorTotalCompraFrente_test() {
 		try {
 			assertNotNull(getCompra());
-			assertEquals(BigDecimal.valueOf(143.88), getCompra().valorTotalDaCompra());
+			assertEquals(BigDecimal.valueOf(153.88), getCompra().valorTotalDaCompra().add(getCompra().calcularFrete()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
 
 	}
+	
+//	@Test
+//	@DBUnit(allowEmptyFields = true)
+//	@DataSet("products.yml")
+//	public void valorTotalCompraFrente2_test() {
+//		try {
+//			Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
+//					.setParameter("pid", 31L).getSingleResult();
+//			criador.pegarProduto(findPro1, 3).constroi();
+//			
+//			assertNotNull(getCompra());
+//			assertEquals(BigDecimal.valueOf(143.88), getCompra().valorTotalDaCompra());
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			fail(e.getMessage());
+//		}
+//
+//	}
 
 }
