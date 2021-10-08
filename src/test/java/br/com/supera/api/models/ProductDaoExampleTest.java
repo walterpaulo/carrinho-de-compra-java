@@ -164,7 +164,7 @@ public class ProductDaoExampleTest {
 	public void valorTotalCompraFrente_test() {
 		try {
 			assertNotNull(getCompra());
-			assertEquals(BigDecimal.valueOf(153.88), getCompra().valorTotalDaCompra().add(getCompra().calcularFrete()));
+			assertEquals(BigDecimal.valueOf(153.88), getCompra().valorDaCompra().add(getCompra().calcularFrete()));
 		} catch (Exception e) {
 			e.printStackTrace();
 			fail(e.getMessage());
@@ -172,22 +172,49 @@ public class ProductDaoExampleTest {
 
 	}
 	
-//	@Test
-//	@DBUnit(allowEmptyFields = true)
-//	@DataSet("products.yml")
-//	public void valorTotalCompraFrente2_test() {
-//		try {
-//			Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
-//					.setParameter("pid", 31L).getSingleResult();
-//			criador.pegarProduto(findPro1, 3).constroi();
-//			
-//			assertNotNull(getCompra());
-//			assertEquals(BigDecimal.valueOf(143.88), getCompra().valorTotalDaCompra());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//			fail(e.getMessage());
-//		}
-//
-//	}
+	@Test
+	@DBUnit(allowEmptyFields = true)
+	@DataSet("products.yml")
+	public void valorTotalCompraFrente2_test() {
+		try {
+//			 id: 31
+//			    name: "Terra Média: Sombras de Mordor"
+//			    price: 79.99  x 3 = 239.97
+//			    score: 50
+			
+			Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
+					.setParameter("pid", 31L).getSingleResult();
+			criador.pegarProduto(findPro1, 3).constroi();
+			
+			assertNotNull(getCompra());
+			assertEquals(BigDecimal.valueOf(383.85), getCompra().valorDaCompra().add(getCompra().calcularFrete()));
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+
+	}
+	@Test
+	@DBUnit(allowEmptyFields = true)
+	@DataSet("products.yml")
+	public void valorTotalCompraFrente3_test() {
+		try {
+//			 id: 31
+//			    name: "Terra Média: Sombras de Mordor"
+//			    price: 79.99  x 3 = 239.97
+//			    score: 50
+			
+			Product findPro1 = (Product) em().createQuery("select p from Product p where p.id = :pid")
+					.setParameter("pid", 31L).getSingleResult();
+			criador.pegarProduto(findPro1, 3).tiraProdutoPorId(74L);
+			
+			assertNotNull(getCompra());
+			assertEquals(BigDecimal.valueOf(249.97), getCompra().valorDaCompra().add(getCompra().calcularFrete()));
+		} catch (Exception e) {
+			e.printStackTrace();
+			fail(e.getMessage());
+		}
+
+	}
 
 }

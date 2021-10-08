@@ -37,7 +37,7 @@ public class CarrinhoDeCompra {
 		getListaProdutos().remove(obj);
 	}
 
-	public BigDecimal valorTotalDaCompra() {
+	public BigDecimal valorDaCompra() {
 
 		BigDecimal valorRetorno = getListaProdutos().stream()
 				.map(p1 -> p1.getProduto().getPrice().multiply(new BigDecimal(p1.getQtde())))
@@ -47,7 +47,7 @@ public class CarrinhoDeCompra {
 
 	public BigDecimal calcularFrete() {
 		FreteProduto frete = new FreteProduto();
-		return frete.calcularFrete(valorTotalDaCompra(), valorFrete());
+		return frete.calcularFrete(valorDaCompra(), valorFrete());
 	}
 
 	private BigDecimal valorFrete() {

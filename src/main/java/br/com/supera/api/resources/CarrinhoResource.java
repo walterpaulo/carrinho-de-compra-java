@@ -26,7 +26,7 @@ public class CarrinhoResource {
 		// carrinho.removerProdutoPorId(99L);
 		System.out.print(carrinho.quantidadeProdutos());
 		System.out.println("ok");
-		System.out.println("Valor total: " + carrinho.valorTotalDaCompra() + " Frete: " + carrinho.calcularFrete());
+		System.out.println("Valor total: " + carrinho.valorDaCompra() + " Frete: " + carrinho.calcularFrete());
 		carrinho.teste();
 		System.out.println("============================");
 		EntityManager entityManager = Conexao.getEntityManager();
