@@ -65,7 +65,6 @@ public class ProductDaoExampleTest {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
-
 	}
 
 	@Test
@@ -85,7 +84,6 @@ public class ProductDaoExampleTest {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
-
 	}
 
 	@Test
@@ -119,7 +117,6 @@ public class ProductDaoExampleTest {
 			e.printStackTrace();
 			fail(e.getMessage());
 		}
-
 	}
 
 	@Test
