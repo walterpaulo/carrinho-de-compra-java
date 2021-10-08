@@ -2,13 +2,18 @@ package br.com.supera.api.resources;
 
 import java.math.BigDecimal;
 
+import javax.persistence.EntityManager;
+
 import br.com.supera.api.models.Product;
 import br.com.supera.api.services.CarrinhoDeCompra;
 import br.com.supera.api.services.CriadorDeCarrinho;
+import br.com.supera.api.util.Conexao;
+
+
 
 public class CarrinhoResource {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
 
 		System.out.println("===========Produto=================");
 
@@ -24,6 +29,27 @@ public class CarrinhoResource {
 		System.out.println("Valor total: " + carrinho.valorTotalDaCompra() + " Frete: " + carrinho.calcularFrete());
 		carrinho.teste();
 		System.out.println("============================");
+		EntityManager entityManager = Conexao.getEntityManager();
+
+		try {
+			entityManager.getTransaction().begin();
+			
+			entityManager.getTransaction().commit();
+			entityManager.close();
+			
+			
+			System.out.println("============================");
+			
+		} catch (Exception e) {
+			if(entityManager.isOpen()) {
+				entityManager.getTransaction().rollback();
+			}
+		} finally {
+			if(entityManager.isOpen()) {
+				entityManager.close();
+			}
+		}
+
 	}
 
 }
