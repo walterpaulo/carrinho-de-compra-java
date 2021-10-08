@@ -128,9 +128,10 @@ public class ProductDaoExampleTest {
 					.setParameter("pid", 12L).getSingleResult();
 			Product findPro2 = (Product) em().createQuery("select p from Product p where p.id = :pid")
 					.setParameter("pid", 99L).getSingleResult();
-
-			carrinho.incluirProduto(findPro1, 2);
-			carrinho.incluirProduto(findPro2, 2);
+			criador.pegarProduto(findPro1, 2)
+			       .pegarProduto(findPro2, 2)
+			       .constroi();
+			
 			assertNotNull(getCompra());
 			assertEquals(2, getCompra().quantidadeProdutos());
 		} catch (Exception e) {
@@ -145,8 +146,7 @@ public class ProductDaoExampleTest {
 //	public void removerProdutoCarrinho_test() {
 //		try {
 //			
-//
-//			carrinho.incluirProduto(findPro1, 2);
+//			carrinho.removeProduto(99L);
 //			assertNotNull(getCompra());
 //			assertEquals(2, getCompra().quantidadeProdutos());
 //		} catch (Exception e) {
