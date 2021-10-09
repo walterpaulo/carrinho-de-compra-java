@@ -1,6 +1,7 @@
 package br.com.supera.api.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +27,11 @@ public class ProdutoService {
 	
 	public List<Product> getProdutoScore() {
 		return repository.findAll();
+	}
+	
+	public Optional<Product> findPorId(Long id) {
+		Optional<Product> produto = repository.findById(id);
+		return produto;
 	}
 
 
