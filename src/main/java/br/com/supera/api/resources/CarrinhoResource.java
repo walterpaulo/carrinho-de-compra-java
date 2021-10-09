@@ -29,26 +29,8 @@ public class CarrinhoResource {
 		System.out.println("Valor total: " + carrinho.valorDaCompra() + " Frete: " + carrinho.calcularFrete());
 		carrinho.teste();
 		System.out.println("============================");
-		EntityManager entityManager = Conexao.getEntityManager();
+//		EntityManager entityManager = Conexao.getEntityManager();
 
-		try {
-			entityManager.getTransaction().begin();
-			
-			entityManager.getTransaction().commit();
-			entityManager.close();
-			
-			
-			System.out.println("============================");
-			
-		} catch (Exception e) {
-			if(entityManager.isOpen()) {
-				entityManager.getTransaction().rollback();
-			}
-		} finally {
-			if(entityManager.isOpen()) {
-				entityManager.close();
-			}
-		}
 
 	}
 

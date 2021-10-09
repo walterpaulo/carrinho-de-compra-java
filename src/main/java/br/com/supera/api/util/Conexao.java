@@ -6,7 +6,7 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
 public class Conexao {
-	private static final String PERSISTENCE_UNIT = "product1";
+	private static final String PERSISTENCE_UNIT = "productDS";
 	private static ThreadLocal<EntityManager> threadEntityManager = new ThreadLocal<EntityManager>();
 	private static EntityManagerFactory entityManagerFactory;
 
