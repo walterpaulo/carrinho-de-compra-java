@@ -10,7 +10,6 @@ import javax.persistence.Id;
 public class Product {
 
 	@Id
-	@GeneratedValue
 	private long id;
 	private String name;
 	private BigDecimal price;
