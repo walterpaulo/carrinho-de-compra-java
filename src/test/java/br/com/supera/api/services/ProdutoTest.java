@@ -33,14 +33,14 @@ public class ProdutoTest {
 		getProduto().adicionar(prod3);
 	}
 	
-	@SuppressWarnings("deprecation")
-	@Test
-	public void quantidadeProduto_test() {
-		
-		getProduto().excluirPorId(12L);;
-
-		Assert.assertEquals(2, getProduto().quantidadeItens());
-	}
+//	@SuppressWarnings("deprecation")
+//	@Test
+//	public void quantidadeProduto_test() {
+//		
+//		getProduto().excluirPorId(12L);;
+//
+//		Assert.assertEquals(2, getProduto().quantidadeItens());
+//	}
 
 
 }

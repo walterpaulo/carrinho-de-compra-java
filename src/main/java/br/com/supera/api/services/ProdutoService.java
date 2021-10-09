@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import br.com.supera.api.models.Product;
+import br.com.supera.api.repositorys.ProdutoRepository;
 
-
+@Service
 public class ProdutoService {
+	@Autowired
+	private ProdutoRepository repository;
 	private List<Product> produto = new ArrayList<Product>();
 	
 	public ProdutoService() {
@@ -16,7 +21,7 @@ public class ProdutoService {
 	}
 
 	public List<Product> getProduto() {
-		return produto;
+		return repository.findAll();
 	}
 
 	public void setProduto(List<Product> produto) {

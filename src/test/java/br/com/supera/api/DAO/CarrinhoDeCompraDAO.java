@@ -16,15 +16,15 @@ import br.com.supera.api.models.Product;
 @DataSet("products.yml")
 public class CarrinhoDeCompraDAO {
 	
-	
-	public List<Product> listar(){
-		
-		EntityManagerProvider emp = EntityManagerProvider.instance("productDS");
-		DBUnitRule dbUnitRule = DBUnitRule.instance(emp.connection());
-		
-		List<Product> products = em().createQuery("select p from Product p").getResultList();
-		assertNotNull(products);
-		return products;
-	}
+//	
+//	public List<Product> listar(){
+//		
+//		EntityManagerProvider emp = EntityManagerProvider.instance("productDS");
+//		DBUnitRule dbUnitRule = DBUnitRule.instance(emp.connection());
+//		
+//		List<Product> products = em().createQuery("select p from Product p").getResultList();
+//		assertNotNull(products);
+//		return products;
+//	}
 
 }
