@@ -35,12 +35,16 @@
   - Quando o valor dos produtos adicionados ao carrinho for igual ou superior a R$ 250,00, o frete é grátis.
 
 
-## Modo
+#### Requerimentos/Conhecimentos e Tecnologias utilizadas
 
-  - A API Restful
-  - Spring Boot versão 2.5.5;
+  - JDK 8([https://www.oracle.com/technetwork/java/javaee/overview/index.html](https://www.oracle.com/technetwork/java/javaee/overview/index.html))
+  - Spring Boot 2+([https://spring.io/projects/spring-boot#learn](https://spring.io/projects/spring-boot#learn))
+  * Thymeleaf([https://www.thymeleaf.org/](https://www.thymeleaf.org/))
   
-## TDD
+####  Aplicação:
+* http://localhost:8080/
+  
+#### TDD
 __CarrinhoTest__  [CarrinhoTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java)(s/ banco) e [ProductDaoExampleTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java) ([c/ banco](./src/test/resources/datasets/products.yml) ); 
   -  Quantidadede de produtos no carrinho;
   -	 Remover Produto do carrinho;
