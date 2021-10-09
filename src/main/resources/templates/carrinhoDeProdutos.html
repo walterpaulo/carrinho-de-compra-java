@@ -9,6 +9,8 @@
 </head>
 <section layout:fragment="conteudo">
     <h4>Carrinho de compra</h4>
+    
+    <button><a class="btn btn-primary" th:href="@{/}">COMPRAR MAIS!!</a></button>
 
     <div class="container">
         <br/>
@@ -39,7 +41,7 @@
                 onclick="return confirm('Adicionar produto no CARRINHO ?')">ADICIONAR</a>
             </tr>
             <tr>
-                <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Nenhum produto cadastrado!</td>
+                <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho vazio, vamos <a class="btn btn-primary" th:href="@{/}">COMPRAR!!</a></td>
             </tr>
             </tbody>
 

@@ -9,6 +9,7 @@
 </head>
 <section layout:fragment="conteudo">
     <h4>Lista de produtos</h4>
+    <button><a class="btn btn-primary" th:href="@{/carrinho-de-Compra}">CARRINHO</a></button>
     <div class="container">
         <br/>
         <br/>
@@ -34,7 +35,7 @@
                 <td th:text="${produto.score}"></td>
                 <td th:text="${produto.image}"></td>
                 <td>
-                <a class="btn btn-primary" th:href="@{/produtos/adicionar/{id}(id=${produto.id})}"
+                <a class="btn btn-primary" th:href="@{{id}(id=${produto.id})}"
                 onclick="return confirm('Adicionar produto no CARRINHO ?')">ADICIONAR</a>
             </tr>
             <tr>

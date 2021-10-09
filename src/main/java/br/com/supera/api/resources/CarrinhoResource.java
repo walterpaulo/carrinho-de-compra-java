@@ -3,6 +3,7 @@ package br.com.supera.api.resources;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,15 +47,19 @@ public class CarrinhoResource {
 		return mv;
 	}
 	
-//	@GetMapping(value = "/adicionar/{id}")
-//	public ModelAndView adicionar(@PathVariable("id") Long id) {
-//		Product produto = this.service.findPorId(id).orElseThrow(()-> new EmptyResultDataAccessException(1));
-//		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
-//		carrinho = criador.pegarProduto(produto, 1).constroi();
-//		setCompra(carrinho);		
-//		mv.addObject("produtos", getCompra());
-//		return mv;
-//	}
+	@GetMapping("/carrinho-de-Compra")
+	public String carrinhoDeCompra() {
+
+		return  PAGINA_CARRINHO;
+	}
+	
+	@GetMapping("{id}")
+	public ModelAndView adicionar(@PathVariable("id") Long id) {
+		Product produto = this.service.findPorId(id).orElseThrow(()-> new EmptyResultDataAccessException(1));
+		carrinho = criador.pegarProduto(produto, 1).constroi();
+		setCompra(carrinho);		
+		return new ModelAndView("redirect:/");
+	}
 	
 	
 
