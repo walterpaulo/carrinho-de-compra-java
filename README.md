@@ -9,8 +9,15 @@
   
   O projeto usa o maven wrapper (mvnw).
   Para executar os testes de exemplo basta o comando abaixo:
+  
   ```sh
   ./mvnw clean test
+  ```
+  
+  Para executar projeto exemplo basta o comando abaixo:
+ 
+  ```sh
+  ./mvnw clean spring-boot:run
   ```
 
 ## Requisitos
@@ -31,17 +38,19 @@
 ## Modo
 
   - A API Restful
+  - Spring Boot versão 2.5.5;
   
 ## TDD
-__CarrinhoTest__ (camada de serviços)
+__CarrinhoTest__  [CarrinhoTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java)(s/ banco) e [ProductDaoExampleTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java) ([c/ banco](./src/test/resources/datasets/products.yml) ); 
   -  Quantidadede de produtos no carrinho;
   -	 Remover Produto do carrinho;
   -	 Valor de compra abaixo de R$ 250,00 e cobrado tarifa de frete;
   -	 Valor de compra acima de R$ 250,00 e zerada tarifa de frete;
 
-__ProdutoTest__ (camada de serviços)
+__ProdutoTest__  [ProdutoTest.java](./src/test/java/br/com/supera/api/services/ProdutoTest.java)
 
   -  Quantidadede de produtos(adição, exclusão e quantidade);
+ 
  
 	
   
