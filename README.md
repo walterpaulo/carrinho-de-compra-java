@@ -51,10 +51,6 @@ __CarrinhoTest__  [CarrinhoTest.java](./src/test/java/br/com/supera/api/models/P
   -	 Valor de compra abaixo de R$ 250,00 e cobrado tarifa de frete;
   -	 Valor de compra acima de R$ 250,00 e zerada tarifa de frete;
 
-__ProdutoTest__  [ProdutoTest.java](./src/test/java/br/com/supera/api/services/ProdutoTest.java)
-
-  -  Quantidadede de produtos(adição, exclusão e quantidade);
- 
  
 	
   
