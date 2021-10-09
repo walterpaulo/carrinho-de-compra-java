@@ -21,7 +21,7 @@ public class CarrinhoResource {
 
 	private final String PAGINA_LISTA = "listaProduto";
 	private final String PAGINA_CARRINHO = "carrinhoDeProdutos";
-	
+
 	private CarrinhoDeCompra compra;
 	private final CriadorDeCarrinho criador = new CriadorDeCarrinho();
 	private CarrinhoDeCompra carrinho;
@@ -33,7 +33,6 @@ public class CarrinhoResource {
 	public void setCompra(CarrinhoDeCompra compra) {
 		this.compra = compra;
 	}
-	
 
 	@Autowired
 	private ProdutoService service;
@@ -46,21 +45,20 @@ public class CarrinhoResource {
 		mv.addObject("produtos", produtos);
 		return mv;
 	}
-	
-	@GetMapping("/carrinho-de-Compra")
-	public String carrinhoDeCompra() {
 
-		return  PAGINA_CARRINHO;
+	@GetMapping("/carrinho-de-Compra")
+	public ModelAndView carrinhoDeCompra() {
+		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
+		
+		return mv;
 	}
-	
+
 	@GetMapping("{id}")
 	public ModelAndView adicionar(@PathVariable("id") Long id) {
-		Product produto = this.service.findPorId(id).orElseThrow(()-> new EmptyResultDataAccessException(1));
+		Product produto = this.service.findPorId(id).orElseThrow(() -> new EmptyResultDataAccessException(1));
 		carrinho = criador.pegarProduto(produto, 1).constroi();
-		setCompra(carrinho);		
+		setCompra(carrinho);
 		return new ModelAndView("redirect:/");
 	}
-	
-	
 
 }
