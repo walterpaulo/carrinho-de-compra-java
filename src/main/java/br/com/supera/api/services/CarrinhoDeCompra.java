@@ -4,9 +4,11 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import br.com.supera.api.models.Product;
+import br.com.supera.api.services.TDO.NotaTDO;
 
 public class CarrinhoDeCompra {
 	private List<CarrinhoProdutos> listaProdutos;
@@ -29,7 +31,22 @@ public class CarrinhoDeCompra {
 	}
 
 	public int quantidadeProdutos() {
+		if (getListaProdutos().isEmpty()) {
+			return 0;
+		}
 		return getListaProdutos().size();
+	}
+
+	public List<NotaTDO> carrinhoDeCompra() {
+		List<NotaTDO> listaObj = new ArrayList<NotaTDO>();
+		for (CarrinhoProdutos obj : getListaProdutos()) {
+			NotaTDO novo = new NotaTDO(obj.getProduto().getId(), obj.getProduto().getName(), obj.getQtde(),
+					obj.getProduto().getPrice(), this.valorDaCompra(), this.calcularFrete(),
+					this.valorDaCompra().add(this.calcularFrete()));
+			listaObj.add(novo);
+		}
+
+		return listaObj;
 	}
 
 	public void removerProdutoPorId(long id) {

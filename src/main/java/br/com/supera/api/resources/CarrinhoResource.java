@@ -51,7 +51,7 @@ public class CarrinhoResource {
 	public ModelAndView carrinhoDeCompra() {
 		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
 		
-//		mv.addObject("produtos", 0);
+		mv.addObject("produtos", getCompra().carrinhoDeCompra());
 		return mv;
 	}
 
