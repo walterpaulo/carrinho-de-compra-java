@@ -46,8 +46,10 @@
                 <td th:text="|R$ ${{produto.vlTotal}}|"></td>
                <!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> --> 
                 <td>
+                <a class="btn btn-primary" th:href="@{/produtos/editarQuantidade/{id}(id=${produto.codigo})}"
+                onclick="return confirm('Informe a quantidad ?')">Editar</a>
                 <a class="btn btn-primary" th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
-                onclick="return confirm('Redirar produto no CARRINHO ?')">ADICIONAR</a>
+                onclick="return confirm('Redirar produto no CARRINHO ?')">Remover</a>
             </tr>
             <tr>
                 <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho vazio, vamos <a class="btn btn-primary" th:href="@{/}">COMPRAR!!</a></td>
