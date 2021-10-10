@@ -20,7 +20,8 @@
 		<div class="row">
 			<h4>Carrinho de compra</h4>
 
-			<a class="waves-effect waves-light btn" th:href="@{/}"><i class="material-icons left">add_shopping_cart</i>COMPRAR MAIS!!</a>
+			<a class="waves-effect waves-light btn" th:href="@{/}"><i
+				class="material-icons left">add_shopping_cart</i>COMPRAR MAIS!!</a>
 		</div>
 		<br /> <br />
 
@@ -50,27 +51,29 @@
 					<td th:text="${produto.codigo}"></td>
 					<td th:text="${produto.descricao}"></td>
 					<td th:text="${produto.qtde}"></td>
-					<td th:text="${produto.unit}"></td>
+					<td th:text="|R$ ${produto.unit}"></td>
 					<td th:text="|R$ ${{produto.vlTotal}}|"></td>
 					<!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> -->
 					<td><a class="btn btn-primary"
 						th:href="@{/produtos/editarQuantidade/{id}(id=${produto.codigo})}"
-						onclick="return confirm('Informe a quantidad ?')"><i class="material-icons left">edit</i>Editar</a> <a
+						onclick="return confirm('Informe a quantidad ?')"><i
+							class="material-icons left">edit</i>Editar</a> <a
 						class="waves-effect waves-light btn"
 						th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
-						onclick="return confirm('Redirar produto no CARRINHO ?')"><i class="material-icons left">delete</i>Remover</a>
+						onclick="return confirm('Redirar produto no CARRINHO ?')"><i
+							class="material-icons left">delete</i>Remover</a>
 				</tr>
 				<tr>
 					<td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho
-						vazio, vamos <a class="waves-effect waves-light btn" th:href="@{/}"><i class="material-icons left">add_shopping_cart</i>COMPRAR!!</a>
+						vazio, vamos <a class="waves-effect waves-light btn"
+						th:href="@{/}"><i class="material-icons left">add_shopping_cart</i>COMPRAR!!</a>
 					</td>
 				</tr>
 			</tbody>
-
 		</table>
-	</div>
-</section>
+
 <!--JavaScript at end of body for optimized loading-->
-<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+<script type="text/javascript" src="../static/materialize/js/materialize.min.js"></script>
+</section>
 </html>
 </html>
