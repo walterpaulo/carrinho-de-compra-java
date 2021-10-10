@@ -1,11 +1,11 @@
-# SPRING TEST - MVC
+#LOJA DE GAMES SPRING TEST - MVC
 
 
 ## Descrição
 
   O teste consiste em construir a camada de serviço de um pseudo ecommerce de games mobile utilizando Java
 
-## Como executar os testes
+### Como executar os testes
   
   O projeto usa o maven wrapper (mvnw).
   Para executar os testes de exemplo basta o comando abaixo:
@@ -17,7 +17,7 @@
   Para executar projeto exemplo basta o comando abaixo:
  
   ```sh
-  ./mvnw clean spring-boot:run
+  ./mvnw spring-boot:run
   ```
 
 ## Requisitos
@@ -42,8 +42,31 @@
   - Thymeleaf([https://www.thymeleaf.org/](https://www.thymeleaf.org/))
   - Materialize([https://materializecss.com/](https://materializecss.com/))
   
+  
+####  FrameWork Spring boot:
+-  Fácil implantação;
+-  Acelera os resultados de entradas;
+-  Impulsiona desenvolvimentos de microsserviços;
+-  Estável com Java 11;
+-  Prepara o ambiente de desenvolvimento, sem "dor de cabeça"; 
+ 
+  
 ####  Aplicação:
+#####Página incial:
 * http://localhost:8080/
+
+#####Página Carrinho de compra:
+* http://localhost:8080/carrinho-de-Compra
+
+#####Lista produtos por nome:
+* http://localhost:8080/name
+
+#####Lista produtos por preço:
+* http://localhost:8080/price
+
+#####Lista produtos por score:
+* http://localhost:8080/score
+
   
 #### TDD
 __CarrinhoTest__  [CarrinhoTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java)(s/ banco) e [ProductDaoExampleTest.java](./src/test/java/br/com/supera/api/models/ProductDaoExampleTest.java) ([c/ banco](./src/test/resources/datasets/products.yml) ); 
@@ -56,4 +79,19 @@ __CarrinhoTest__  [CarrinhoTest.java](./src/test/java/br/com/supera/api/models/P
 	
   
 ## Finalazado
- executar/compilar/empacotar 
+##### executar
+Abre o terminal e dentro do diretório digita o camando:
+
+  ```sh
+	$> ./mvnw clean test
+  ```
+   
+##### compilar
+Para obter o JAR, basta executar o comando:
+   
+   ```sh
+  $> mvn install
+  $> java -jar target/
+  ```
+ 
+##### empacotar 
