@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layoutPadrao}">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layoutPadrao}">
 <head>
 <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	    <meta charset="UTF-8"/>
-    <title>Carrinho de compra</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Carrinho de compra</title>
 </head>
 <section layout:fragment="conteudo">
-    <h4>Carrinho de compra</h4>
-    
-    <button><a class="btn btn-primary" th:href="@{/}">COMPRAR MAIS!!</a></button>
+	<div class="container">
+		<div class="row">
+			<h4>Carrinho de compra</h4>
 
-    <div class="container">
-        <br/>
-        <br/>
+			<a class="waves-effect waves-light btn" th:href="@{/}"><i class="material-icons left">add_shopping_cart</i>COMPRAR MAIS!!</a>
+		</div>
+		<br /> <br />
 
-        <table class="table">
+		<table class="table">
 
-            <thead>
-            <tr>
-                <th>Código</th>
-                <th>Descrição</th>
-                <th>Qtde</th>
-                <th>Valor unit.</th>
-                <th>Valor Total</th>
-                <th>Operação</th>
-            </tr>
+			<thead>
+				<tr>
+					<th>Código</th>
+					<th>Descrição</th>
+					<th>Qtde</th>
+					<th>Valor unit.</th>
+					<th>Valor Total</th>
+					<th>Operação</th>
+				</tr>
 
-            </thead>
-            <tbody>
-<!-- 	private Long codigo;
+			</thead>
+			<tbody>
+				<!-- 	private Long codigo;
     private String descricao;
     private int qtde;
     private BigDecimal unit;
@@ -44,27 +46,31 @@
     private BigDecimal vlFrete;
     private BigDecimal vlTotalF; -->
 
-            <tr th:each="produto : ${produtos}">
-                <td th:text="${produto.codigo}"></td>
-                <td th:text="${produto.descricao}"></td>
-                <td th:text="${produto.qtde}"></td>
-                <td th:text="${produto.unit}"></td>
-                <td th:text="|R$ ${{produto.vlTotal}}|"></td>
-               <!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> --> 
-                <td>
-                <a class="btn btn-primary" th:href="@{/produtos/editarQuantidade/{id}(id=${produto.codigo})}"
-                onclick="return confirm('Informe a quantidad ?')">Editar</a>
-                <a class="btn btn-primary" th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
-                onclick="return confirm('Redirar produto no CARRINHO ?')">Remover</a>
-            </tr>
-            <tr>
-                <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho vazio, vamos <a class="btn btn-primary" th:href="@{/}">COMPRAR!!</a></td>
-            </tr>
-            </tbody>
+				<tr th:each="produto : ${produtos}">
+					<td th:text="${produto.codigo}"></td>
+					<td th:text="${produto.descricao}"></td>
+					<td th:text="${produto.qtde}"></td>
+					<td th:text="${produto.unit}"></td>
+					<td th:text="|R$ ${{produto.vlTotal}}|"></td>
+					<!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> -->
+					<td><a class="btn btn-primary"
+						th:href="@{/produtos/editarQuantidade/{id}(id=${produto.codigo})}"
+						onclick="return confirm('Informe a quantidad ?')"><i class="material-icons left">edit</i>Editar</a> <a
+						class="waves-effect waves-light btn"
+						th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
+						onclick="return confirm('Redirar produto no CARRINHO ?')"><i class="material-icons left">delete</i>Remover</a>
+				</tr>
+				<tr>
+					<td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho
+						vazio, vamos <a class="waves-effect waves-light btn" th:href="@{/}"><i class="material-icons left">add_shopping_cart</i>COMPRAR!!</a>
+					</td>
+				</tr>
+			</tbody>
 
-        </table>
-    </div>
+		</table>
+	</div>
 </section>
- <!--JavaScript at end of body for optimized loading-->
-      <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-</html></html>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</html>
+</html>

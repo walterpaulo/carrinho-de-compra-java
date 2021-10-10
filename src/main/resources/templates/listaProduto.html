@@ -1,57 +1,67 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layoutPadrao}">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layoutPadrao}">
 <head>
-	<!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="UTF-8"/>
-    <title>Lista de produtos</title>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>Lista de produtos</title>
 </head>
 <section layout:fragment="conteudo">
-    <h4>Lista de produtos</h4>
-    <button><a class="btn btn-primary" th:href="@{/carrinho-de-Compra}">CARRINHO</a></button>
-    <div class="container">
-        <br/>
-        <br/>
+	<div class="container">
+		<div class="row">
+			<div class="input-field col6">
+			<h4>Lista de produtos</h4>
+			</div>
+			<div class="input-field col5">
+				<a class="waves-effect waves-light btn"
+					th:href="@{/carrinho-de-Compra}"><i class="material-icons left">add_shopping_cart</i>Listar
+					carrinho</a>
+			</div>
+		</div>
+		<br /> <br />
+		<table class="table">
 
-        <table class="table">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>PRICE</th>
+					<th>SCORE</th>
+					<th>IMAGE</th>
+					<th>Operação</th>
+				</tr>
 
-            <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nome</th>
-                <th>PRICE</th>
-                <th>SCORE</th>
-                <th>IMAGE</th>
-                <th>Operação</th>
-            </tr>
+			</thead>
+			<tbody>
+				<tr th:each="produto : ${produtos}">
+					<td th:text="${produto.id}"></td>
+					<td th:text="${produto.name}"></td>
+					<td th:text="|R$ ${{produto.price}}|"></td>
+					<td th:text="${produto.score}"></td>
+					<td th:text="${produto.image}"></td>
+					<td><a class="waves-effect waves-light btn"
+						th:href="@{{id}(id=${produto.id})}"
+						onclick="return confirm('Adicionar produto no CARRINHO ?')"><i
+							class="material-icons left">add_circle_outline</i>Adicionar</a>
+				</tr>
+				<tr>
+					<td colspan="5" th:if="${#lists.isEmpty(produtos)}">Nenhum
+						produto cadastrado!</td>
+				</tr>
+			</tbody>
 
-            </thead>
-            <tbody>
-            <tr th:each="produto : ${produtos}">
-                <td th:text="${produto.id}"></td>
-                <td th:text="${produto.name}"></td>
-                <td th:text="|R$ ${{produto.price}}|"></td>
-                <td th:text="${produto.score}"></td>
-                <td th:text="${produto.image}"></td>
-                <td>
-                <a class="btn btn-primary" th:href="@{{id}(id=${produto.id})}"
-                onclick="return confirm('Adicionar produto no CARRINHO ?')">ADICIONAR</a>
-                
-            </tr>
-            <tr>
-                <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Nenhum produto cadastrado!</td>
-            </tr>
-            </tbody>
-
-        </table>
-    </div>
-
+		</table>
+	</div>
+	<!--JavaScript at end of body for optimized loading-->
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 </section>
 </html>
