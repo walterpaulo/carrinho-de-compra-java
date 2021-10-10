@@ -53,6 +53,7 @@ public class CarrinhoResource {
 		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
 		
 		mv.addObject("produtos", getCompra().carrinhoDeCompra());
+		mv.addObject("valorSub", getCompra().valorDaCompra());
 		mv.addObject("valorFrete", getCompra().calcularFrete());
 		mv.addObject("valorTotalF", getCompra().valorDaCompra());
 		

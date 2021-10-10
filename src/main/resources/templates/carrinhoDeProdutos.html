@@ -39,14 +39,6 @@
 
 			</thead>
 			<tbody>
-				<!-- 	private Long codigo;
-    private String descricao;
-    private int qtde;
-    private BigDecimal unit;
-    private BigDecimal vlTotal;
-    private BigDecimal vlFrete;
-    private BigDecimal vlTotalF; -->
-
 				<tr th:each="produto : ${produtos}">
 					<td th:text="${produto.codigo}"></td>
 					<td th:text="${produto.descricao}"></td>
@@ -54,11 +46,7 @@
 					<td th:text="|R$ ${produto.unit}"></td>
 					<td th:text="|R$ ${{produto.vlTotal}}|"></td>
 					<!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> -->
-					<td><a class="btn btn-primary"
-						th:href="@{/produtos/editarQuantidade/{id}(id=${produto.codigo})}"
-						onclick="return confirm('Informe a quantidad ?')"><i
-							class="material-icons left">edit</i>Editar</a> <a
-						class="waves-effect waves-light btn"
+					<td><a class="waves-effect waves-light btn"
 						th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
 						onclick="return confirm('Redirar produto no CARRINHO ?')"><i
 							class="material-icons left">delete</i>Remover</a>
@@ -73,11 +61,15 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Valor do Frete</td>
+					<td>SubTotal</td>
+					<td th:text="|R$ ${valorSub}"></td>
+				</tr>
+				<tr>
+					<td>Frete</td>
 					<td th:text="|R$ ${valorFrete}"></td>
 				</tr>
 				<tr>
-					<td>Valor Total</td>
+					<td>Total</td>
 					<td th:text="|R$ ${valorTotalF}"></td>
 				</tr>
 			</tbody>
