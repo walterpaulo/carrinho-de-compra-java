@@ -63,5 +63,12 @@ public class CarrinhoResource {
 		setCompra(carrinho);
 		return new ModelAndView("redirect:/");
 	}
+	@GetMapping("/produtos/retirar/{id}")
+	public ModelAndView retirar(@PathVariable("id") Long id) {
+		Product produto = this.service.findPorId(id).orElseThrow(() -> new EmptyResultDataAccessException(1));
+		carrinho = criador.tiraProdutoPorId(produto.getId()).constroi();
+		setCompra(carrinho);
+		return new ModelAndView("redirect:/");
+	}
 
 }

@@ -37,6 +37,7 @@
                 <td>
                 <a class="btn btn-primary" th:href="@{{id}(id=${produto.id})}"
                 onclick="return confirm('Adicionar produto no CARRINHO ?')">ADICIONAR</a>
+                
             </tr>
             <tr>
                 <td colspan="5" th:if="${#lists.isEmpty(produtos)}">Nenhum produto cadastrado!</td>
