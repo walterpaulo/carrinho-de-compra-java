@@ -63,6 +63,10 @@
 						onclick="return confirm('Redirar produto no CARRINHO ?')"><i
 							class="material-icons left">delete</i>Remover</a>
 				</tr>
+				<tr th:each="valor : ${produtos}">
+					<td th:text="${valor.vlFrete}"></td>
+					<td th:text="${valor.vlTotalF}"></td>
+				</tr>
 				<tr>
 					<td colspan="5" th:if="${#lists.isEmpty(produtos)}">Carrinho
 						vazio, vamos <a class="waves-effect waves-light btn"
