@@ -1,5 +1,6 @@
 package br.com.supera.api.resources;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,13 +51,15 @@ public class CarrinhoResource {
 	public ModelAndView carrinhoDeCompra() {
 		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
 		
+//		mv.addObject("produtos", 0);
 		return mv;
 	}
 
 	@GetMapping("{id}")
 	public ModelAndView adicionar(@PathVariable("id") Long id) {
 		Product produto = this.service.findPorId(id).orElseThrow(() -> new EmptyResultDataAccessException(1));
-		carrinho = criador.pegarProduto(produto, 1).constroi();
+		Product obj = new Product(33L, "teclado", BigDecimal.valueOf(250), Short.parseShort("30"), "//");
+		carrinho = criador.pegarProduto(obj, 1).constroi();
 		setCompra(carrinho);
 		return new ModelAndView("redirect:/");
 	}
