@@ -25,7 +25,7 @@
 		</div>
 		<br /> <br />
 
-		<table class="table">
+		<table class="highlight">
 
 			<thead>
 				<tr>
@@ -72,6 +72,13 @@
 					<td>Total</td>
 					<td th:text="|R$ ${valorTotalF}"></td>
 				</tr>
+				<tr>
+				<div th:if="${not #lists.isEmpty(produtos)}">
+				<td colspan="2"><a class="waves-effect waves-light btn"
+						th:href="@{#}"
+						onclick="return confirm('Finalizar compra ?')"><i class="material-icons left">shopping_cart</i>Finalizar compra</a>
+				</tr>
+				</div>
 			</tbody>
 		</table>
 

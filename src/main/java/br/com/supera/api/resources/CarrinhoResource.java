@@ -43,7 +43,6 @@ public class CarrinhoResource {
 	public ModelAndView listar() {
 		ModelAndView mv = new ModelAndView(PAGINA_LISTA);
 		List<Product> produtos = service.getProduto();
-
 		mv.addObject("produtos", produtos);
 		return mv;
 	}
@@ -51,12 +50,18 @@ public class CarrinhoResource {
 	@GetMapping("/carrinho-de-Compra")
 	public ModelAndView carrinhoDeCompra() {
 		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
-		
+		if(getCompra() == null) {
+			carrinho = criador.constroi();
+			setCompra(compra);
+			mv.addObject("valorSub", 0);
+			mv.addObject("valorFrete", 0);
+			mv.addObject("valorTotalF", 0);
+			return mv;
+		}
 		mv.addObject("produtos", getCompra().carrinhoDeCompra());
 		mv.addObject("valorSub", getCompra().valorDaCompra());
 		mv.addObject("valorFrete", getCompra().calcularFrete());
 		mv.addObject("valorTotalF", getCompra().valorDaCompra());
-		
 		return mv;
 	}
 
