@@ -49,8 +49,7 @@ public class CarrinhoDeCompra {
 		List<NotaTDO> listaObj = new ArrayList<NotaTDO>();
 		for (CarrinhoProdutos obj : getListaProdutos()) {
 			NotaTDO novo = new NotaTDO(obj.getProduto().getId(), obj.getProduto().getName(), obj.getQtde(),
-					obj.getProduto().getPrice(), obj.getProduto().getPrice().multiply(BigDecimal.valueOf(obj.getQtde())), this.calcularFrete(),
-					this.valorDaCompra().add(this.calcularFrete()));
+					obj.getProduto().getPrice(), obj.getProduto().getPrice());
 			listaObj.add(novo);
 		}
 
