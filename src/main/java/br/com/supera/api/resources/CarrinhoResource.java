@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.supera.api.models.Product;
 import br.com.supera.api.services.CarrinhoDeCompra;
@@ -52,6 +53,9 @@ public class CarrinhoResource {
 		ModelAndView mv = new ModelAndView(PAGINA_CARRINHO);
 		
 		mv.addObject("produtos", getCompra().carrinhoDeCompra());
+		mv.addObject("valorFrete", getCompra().calcularFrete());
+		mv.addObject("valorTotalF", getCompra().valorDaCompra());
+		
 		return mv;
 	}
 
