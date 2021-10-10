@@ -22,11 +22,14 @@ public class ProdutoService {
 	}
 	
 	public List<Product> getProdutoNome() {
-		return repository.findAll();
+		return repository.ordenarPorNome();
+	}
+	public List<Product> getProdutoPrice() {
+		return repository.ordenarPorPrice();
 	}
 	
 	public List<Product> getProdutoScore() {
-		return repository.findAll();
+		return repository.ordenarPorScoce();
 	}
 	
 	public Optional<Product> findPorId(Long id) {

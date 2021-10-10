@@ -28,5 +28,26 @@ public class ProdutoResource {
 		mv.addObject("produtos", produtos);
 		return mv;
 	}
+	@GetMapping("/price")
+	public ModelAndView ordenarPorPrice() {
+		ModelAndView mv = new ModelAndView(PAGINA_LISTA);
+		List<Product> produtos = service.getProdutoPrice();
+		mv.addObject("produtos", produtos);
+		return mv;
+	}
+	@GetMapping("/name")
+	public ModelAndView ordenarPorNome() {
+		ModelAndView mv = new ModelAndView(PAGINA_LISTA);
+		List<Product> produtos = service.getProdutoNome();
+		mv.addObject("produtos", produtos);
+		return mv;
+	}
+	@GetMapping("/score")
+	public ModelAndView ordenarPorScore() {
+		ModelAndView mv = new ModelAndView(PAGINA_LISTA);
+		List<Product> produtos = service.getProdutoScore();
+		mv.addObject("produtos", produtos);
+		return mv;
+	}
 
 }
