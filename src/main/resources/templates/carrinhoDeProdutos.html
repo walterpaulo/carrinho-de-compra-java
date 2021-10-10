@@ -30,21 +30,21 @@
 
             </thead>
             <tbody>
-            <!-- 	private Long codigo;
-//    private String descricao;
-//    private int qtde;
-//    private BigDecimal unit;
-//    private BigDecimal vlTotal;
-//    private BigDecimal vlFrete;
-//    private BigDecimal vlTotalF; -->
+<!-- 	private Long codigo;
+    private String descricao;
+    private int qtde;
+    private BigDecimal unit;
+    private BigDecimal vlTotal;
+    private BigDecimal vlFrete;
+    private BigDecimal vlTotalF; -->
 
             <tr th:each="produto : ${produtos}">
                 <td th:text="${produto.codigo}"></td>
+                <td th:text="${produto.descricao}"></td>
                 <td th:text="${produto.qtde}"></td>
                 <td th:text="${produto.unit}"></td>
-                <td th:text="|R$ ${{produto.unit}}|"></td>
                 <td th:text="|R$ ${{produto.vlTotal}}|"></td>
-                <td th:text="|R$ ${{produto.vlTotalF}}|"></td>
+               <!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> --> 
                 <td>
                 <a class="btn btn-primary" th:href="@{/carrinho-de-compra}"
                 onclick="return confirm('Redirar produto no CARRINHO ?')">ADICIONAR</a>

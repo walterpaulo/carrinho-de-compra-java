@@ -36,12 +36,20 @@ public class CarrinhoDeCompra {
 		}
 		return getListaProdutos().size();
 	}
+	
+//	private Long codigo;
+//    private String descricao;
+//    private int qtde;
+//    private BigDecimal unit;
+//    private BigDecimal vlTotal;
+//    private BigDecimal vlFrete;
+//    private BigDecimal vlTotalF;
 
 	public List<NotaTDO> carrinhoDeCompra() {
 		List<NotaTDO> listaObj = new ArrayList<NotaTDO>();
 		for (CarrinhoProdutos obj : getListaProdutos()) {
 			NotaTDO novo = new NotaTDO(obj.getProduto().getId(), obj.getProduto().getName(), obj.getQtde(),
-					obj.getProduto().getPrice(), this.valorDaCompra(), this.calcularFrete(),
+					obj.getProduto().getPrice(), obj.getProduto().getPrice().multiply(BigDecimal.valueOf(obj.getQtde())), this.calcularFrete(),
 					this.valorDaCompra().add(this.calcularFrete()));
 			listaObj.add(novo);
 		}

@@ -58,8 +58,8 @@ public class CarrinhoResource {
 	@GetMapping("{id}")
 	public ModelAndView adicionar(@PathVariable("id") Long id) {
 		Product produto = this.service.findPorId(id).orElseThrow(() -> new EmptyResultDataAccessException(1));
-		Product obj = new Product(33L, "teclado", BigDecimal.valueOf(250), Short.parseShort("30"), "//");
-		carrinho = criador.pegarProduto(obj, 1).constroi();
+//		Product obj = new Product(33L, "teclado", BigDecimal.valueOf(250), Short.parseShort("30"), "//");
+		carrinho = criador.pegarProduto(produto, 1).constroi();
 		setCompra(carrinho);
 		return new ModelAndView("redirect:/");
 	}
