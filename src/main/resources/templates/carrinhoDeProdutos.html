@@ -47,7 +47,7 @@
 					<td th:text="|R$ ${{produto.vlTotal}}|"></td>
 					<!-- <td th:text="|R$ ${{produto.vlTotalF}}|"></td> -->
 					<td><a class="waves-effect waves-light btn"
-						th:href="@{/produtos/retirar/{id}(id=${produto.codigo})}"
+						th:href="@{/retirar/produto/{id}(id=${produto.codigo})}"
 						onclick="return confirm('Redirar produto no CARRINHO ?')"><i
 							class="material-icons left">delete</i>Remover</a>
 				</tr>

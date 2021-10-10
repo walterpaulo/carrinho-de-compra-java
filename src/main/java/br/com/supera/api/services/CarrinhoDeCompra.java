@@ -36,14 +36,6 @@ public class CarrinhoDeCompra {
 		}
 		return getListaProdutos().size();
 	}
-	
-//	private Long codigo;
-//    private String descricao;
-//    private int qtde;
-//    private BigDecimal unit;
-//    private BigDecimal vlTotal;
-//    private BigDecimal vlFrete;
-//    private BigDecimal vlTotalF;
 
 	public List<NotaTDO> carrinhoDeCompra() {
 		List<NotaTDO> listaObj = new ArrayList<NotaTDO>();
