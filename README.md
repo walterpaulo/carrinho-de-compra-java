@@ -39,7 +39,8 @@
 
   - JDK 8([https://www.oracle.com/technetwork/java/javaee/overview/index.html](https://www.oracle.com/technetwork/java/javaee/overview/index.html))
   - Spring Boot 2+([https://spring.io/projects/spring-boot#learn](https://spring.io/projects/spring-boot#learn))
-  * Thymeleaf([https://www.thymeleaf.org/](https://www.thymeleaf.org/))
+  - Thymeleaf([https://www.thymeleaf.org/](https://www.thymeleaf.org/))
+  - Materialize([https://materializecss.com/](https://materializecss.com/))
   
 ####  Aplicação:
 * http://localhost:8080/
