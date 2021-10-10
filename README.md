@@ -90,8 +90,21 @@ Abre o terminal e dentro do diretório digita o camando:
 Para obter o JAR, basta executar o comando:
    
    ```sh
-  $> mvn install
-  $> java -jar target/
+  $> mvn install 
+  ou 
+  $>./mvnw install
+  $> java -jar target/api-1.0.0-SNAPSHOT.jar
+  ```
+ 
+ Para testar o arquivo binário: 
+ 
+   ```sh
+  $> java -jar target/api-1.0.0-SNAPSHOT.jar
   ```
  
 ##### empacotar 
+
+   ```sh
+  $> tar -cvzf spring-test-api-rest.tar.gzip spring-test-api-rest/
+  ```
+
