@@ -45,7 +45,7 @@
   
 ####  FrameWork Spring boot:
 -  Fácil implantação;
--  Acelera os resultados de entradas;
+-  Acelera os resultados de entrega;
 -  Impulsiona desenvolvimentos de microsserviços;
 -  Estável com Java 11;
 -  Prepara o ambiente de desenvolvimento, sem "dor de cabeça"; 
