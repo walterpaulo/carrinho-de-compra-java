@@ -4,7 +4,7 @@
 ## Descrição
 
   O teste consiste em construir a camada de serviço de um pseudo ecommerce de games mobile utilizando Java.
-  Vídeos de funcionamento está na plataforma do YouTube, em [ https://youtu.be/J4bgc6xGYlw ]( https://youtu.be/J4bgc6xGYlw).
+  Vídeos de funcionamento está na plataforma do YouTube, em [https://youtu.be/J4bgc6xGYlw](https://youtu.be/J4bgc6xGYlw).
 
 ### Como executar os testes
   
