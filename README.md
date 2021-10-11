@@ -53,19 +53,19 @@
  
   
 ####  Aplicação:
-#####Página incial:
+ Página incial:
 * http://localhost:8080/
 
-#####Página Carrinho de compra:
+ Página Carrinho de compra:
 * http://localhost:8080/carrinho-de-Compra
 
-#####Lista produtos por nome:
+ Lista produtos por nome:
 * http://localhost:8080/name
 
-#####Lista produtos por preço:
+ Lista produtos por preço:
 * http://localhost:8080/price
 
-#####Lista produtos por score:
+ Lista produtos por score:
 * http://localhost:8080/score
 
   
