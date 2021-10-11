@@ -3,7 +3,8 @@
 
 ## Descrição
 
-  O teste consiste em construir a camada de serviço de um pseudo ecommerce de games mobile utilizando Java
+  O teste consiste em construir a camada de serviço de um pseudo ecommerce de games mobile utilizando Java.
+  Vídeos de funcionamento está na plataforma do YouTube, em [ https://youtu.be/J4bgc6xGYlw ]( https://youtu.be/J4bgc6xGYlw).
 
 ### Como executar os testes
   
@@ -107,4 +108,5 @@ Para obter o JAR, basta executar o comando:
    ```sh
   $> tar -cvzf spring-test-api-rest.tar.gzip spring-test-api-rest/
   ```
+
 
